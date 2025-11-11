@@ -1,8 +1,4 @@
-// Portfolio JS
-// - Smooth scroll for anchor links
-// - Mobile nav toggle
-// - Contact form validation
-// - Dynamic year in footer
+
 
 (function () {
   // Helper: throttle function for performance (not strictly needed but good practice)
@@ -28,20 +24,21 @@
       e.preventDefault();
       targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
       // Close mobile nav after click
-      const navLinks = document.querySelector('.nav-links');
-      if (navLinks) navLinks.classList.remove('open');
+      const navLinks = document.getElementById('nav-links');
+      if (navLinks) { navLinks.classList.add('hidden'); navLinks.classList.remove('open'); }
       const toggleBtn = document.querySelector('.nav-toggle');
       if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
     }
   });
 
-  // Mobile nav toggle
+  // Mobile nav toggle (Tailwind hidden)
   const toggle = document.querySelector('.nav-toggle');
-  const links = document.querySelector('.nav-links');
+  const links = document.getElementById('nav-links');
   if (toggle && links) {
     toggle.addEventListener('click', function () {
-      const isOpen = links.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(isOpen));
+      const nowHidden = links.classList.toggle('hidden');
+      links.classList.toggle('open', !nowHidden);
+      toggle.setAttribute('aria-expanded', String(!nowHidden));
     });
   }
 
@@ -187,6 +184,7 @@ ${name}`;
       strings: [
         'Eslam Ghanem',
         'Full-Stack Developer', 
+        'Laravel Developer',
         'PHP Developer',
         'JavaScript Specialist',
         'Web Developer',
@@ -202,16 +200,7 @@ ${name}`;
     });
   }
 
-  // Add hover sound effect simulation (visual feedback)
-  const interactiveElements = document.querySelectorAll('.btn, .skill-row, .project-card');
-  interactiveElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      el.style.transform = el.style.transform + ' scale(1.02)';
-    });
-    el.addEventListener('mouseleave', () => {
-      el.style.transform = el.style.transform.replace(' scale(1.02)', '');
-    });
-  });
+  // Hover effects are handled in CSS to avoid inline style jitter
 
   // Add smooth reveal for form fields
   const formFields = document.querySelectorAll('input, textarea');
@@ -226,37 +215,4 @@ ${name}`;
   });
 })();
 
-// switch mode
-const modeLink = document.getElementById('mode-link');
-const modeIcon = document.getElementById('mode-icon');
-
-// ✅ Load saved mode on page load
-const savedMode = localStorage.getItem('theme-mode');
-if (savedMode === 'light') {
-  document.body.classList.add('light-mode');
-  modeIcon.classList.remove('fa-moon');
-  modeIcon.classList.add('fa-sun');
-} else {
-  document.body.classList.remove('light-mode');
-  modeIcon.classList.remove('fa-sun');
-  modeIcon.classList.add('fa-moon');
-}
-
-// 🌗 Toggle mode and save preference
-modeLink.addEventListener('click', function (e) {
-  e.preventDefault();
-  document.body.classList.toggle('light-mode');
-
-  if (document.body.classList.contains('light-mode')) {
-    modeIcon.classList.remove('fa-moon');
-    modeIcon.classList.add('fa-sun');
-    localStorage.setItem('theme-mode', 'light'); // 💾 Save light mode
-  } else {
-    modeIcon.classList.remove('fa-sun');
-    modeIcon.classList.add('fa-moon');
-    localStorage.setItem('theme-mode', 'dark'); // 💾 Save dark mode
-  }
-});
-
-
-// end switch mode  
+// theme toggle removed (light mode deleted)

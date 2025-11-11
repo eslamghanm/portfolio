@@ -3,6 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Eslam Ghanem - Full-Stack Web Developer Portfolio" />
+  <meta name="author" content="Eslam Ghanem" />
+  <meta property="og:title" content="Eslam Ghanem - Full-Stack Web Developer Portfolio" />
+  <meta property="og:description" content="Showcasing projects and skills of Eslam Ghanem, a proficient Full-Stack Web Developer specializing in PHP and modern web technologies." />
+  <meta property="og:image" content="images/final me.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eslamghanem.netlify.app/" />
+  <meta property="og:site_name" content="Eslam Ghanem" />
+  <meta property="og:locale" content="en_US" />
   <title>Eslam Ghanem </title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,31 +22,37 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- Typed.js Library -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"] }
+        }
+      }
+    }
+  </script>
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="min-h-screen font-sans text-[var(--text)] bg-[var(--bg-main)]">
   <!-- ========================================= -->
   <!-- Sticky Navbar                             -->
   <!-- ========================================= -->
   <header class="site-header" id="top">
-    <nav class="navbar">
-      <a href="#top" class="brand " aria-label="Home">ESLAM GHANEM</a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-      <ul class="nav-links">
+    <nav class="navbar flex items-center justify-between gap-4 px-[4%] py-3">
+      <a href="#top" class="brand font-extrabold text-lg tracking-wide text-[var(--text)] hover:text-[var(--accent)] transition" aria-label="Home">ESLAM GHANEM</a>
+      <button class="nav-toggle sm:hidden text-xl bg-transparent" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links hidden sm:flex items-center gap-4 list-none m-0 p-0 text-center" id="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+        
       </ul>
-      <div class="switchMode">
-       <a href="
-       #" class="mode-link" id="mode-link" aria-label="Toggle dark mode
-       ">
-       <i class="fas fa-moon" id="mode-icon"></i>
-       </a>
-      
-      </div>
      
      
       
@@ -47,18 +63,18 @@
   <!-- Hero Section                               -->
   <!-- ========================================= -->
   <section class="hero" aria-label="Hero">
-    <div class="container hero-grid">
-      <div class="hero-content reveal">
+    <div class="container hero-grid max-w-[1100px] w-[92%] mx-auto grid md:grid-cols-2 items-center gap-8 py-14 relative z-[1]">
+      <div class="hero-content reveal text-center md:text-left">
         <!-- Replace with your name and title -->
         <p class="eyebrow">Nice to meet you!</p>
-        <h3 class="hero-subtitle">I'm <span class="typed-roles" id="typed-roles"></span></p>
-        <div class="hero-cta">
-          <a class="btn primary" href="#contact"><i class="fas fa-paper-plane"></i> Contact
-           Me</a>
+        <h3 class="hero-subtitle">I'm <span class="typed-roles" id="typed-roles"></span></h3>
+        <div class="hero-cta flex gap-3 flex-wrap justify-center md:justify-start">
+          <a class="inline-flex items-center gap-2 px-4 py-3 rounded-lg font-semibold bg-[var(--accent)] text-[var(--bg-main)] shadow-[0_4px_15px_rgba(34,197,94,0.3)] hover:bg-[var(--accent-strong)] transition" href="#contact"><i class="fas fa-paper-plane"></i> Contact Me</a>
+          <a class="inline-flex items-center gap-2 px-4 py-3 rounded-lg font-semibold border-2 border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg-main)] transition" href="cv/Eslam%20Ahmed%20Mahmoud%20Ghanem1.pdf" download="Eslam-Ahmed-Ghanem-CV.pdf"><i class="fas fa-download"></i> Download CV</a>
         </div>
       </div>
-      <div class="hero-media reveal" aria-hidden="true">
-        <img src="images/final me.jpg" alt="Eslam Ghanem - Full Stack Developer" />
+      <div class="hero-media reveal justify-self-center md:justify-self-auto" aria-hidden="true">
+        <img src="images/final me.jpg" alt="Eslam Ghanem - Full Stack Developer" loading="lazy" />
       </div>
     </div>
   </section>
@@ -68,9 +84,9 @@
     <!-- About Section                              -->
     <!-- ========================================= -->
     <section id="about" class="section about" aria-label="About Me">
-      <div class="container about-grid">
-        <img class="about-photo reveal" src="images/final me.jpg" alt="Eslam Ghanem - Full Stack Developer" />
-<div class="reveal">
+      <div class="container about-grid max-w-[1100px] w-[92%] mx-auto grid md:grid-cols-[1fr_1.2fr] gap-8 items-center justify-items-center md:justify-items-start">
+        <img class="about-photo reveal" src="images/final me.jpg" alt="Eslam Ghanem - Full Stack Developer" loading="lazy" />
+<div class="reveal text-center md:text-left">
   <h2>About Me</h2>
   <p>
     I'm a <strong>Full-Stack Web Developer</strong> specializing in <strong>PHP</strong> and modern web technologies.
@@ -96,9 +112,9 @@
     <!-- Skills Section                              -->
     <!-- ========================================= -->
     <section id="skills" class="section skills" aria-label="Skills">
-      <div class="container">
-        <h2>Skills</h2>
-        <div class="skills-list">
+      <div class="container max-w-[1100px] w-[92%] mx-auto text-center md:text-left">
+        <h2 class="text-2xl font-semibold mb-6">Skills</h2>
+        <div class="skills-list grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-6 md:gap-x-12 md:gap-y-8">
           <div class="skill-row reveal"><span>HTML5 & CSS3</span><small>Frontend</small></div>
           <div class="skill-row reveal"><span>Bootstrap</span><small>Frontend</small></div>
           <div class="skill-row reveal"><span>JavaScript</span><small>Frontend</small></div>
@@ -116,7 +132,7 @@
           <div class="skill-row reveal"><span>Version Control Systems</span><small>Git</small></div>
           <div class="skill-row reveal"><span>Problem Solving</span><small>Algorithms</small></div>
           <div class="skill-row reveal"><span>Agile Methodologies</span><small>Scrum</small></div>
-          <div class="skill-row reveal"><span>Communication</span><small>Teamwork</small></div>
+          <div class="skill-row reveal"><span>Communication skills </span><small>Teamwork</small></div>
           <div class="skill-row reveal"><span>Time Management</span><small>Productivity</small></div>
         </div>
       </div>
@@ -125,13 +141,13 @@
     <!-- Projects Section                            -->
     <!-- ========================================= -->
 <section id="projects" class="section projects" aria-label="Projects">
-  <div class="container">
+  <div class="container max-w-[1100px] w-[92%] mx-auto text-center md:text-left">
     <h2>Projects</h2>
-    <div class="projects-grid">
+    <div class="projects-grid grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[900px] mx-auto">
 
       <!-- Project 1 - Multi-Actors E-commerce System -->
       <article class="project-card reveal">
-        <img src="https://picsum.photos/seed/ecommerce/600/400" alt="Multi-Actors E-commerce System preview" />
+        <img src="images/e-commerce.jpg" onerror="this.onerror=null;this.src='images/final me.jpg'" alt="E-Commerce System preview" loading="lazy" />
         <div class="project-body">
           <h3>Multi-Actors E-commerce System</h3>
           <p>
@@ -139,31 +155,67 @@
             Includes product management, cart, checkout, and localStorage-based data persistence.
           </p>
           <div class="project-links">
-            <a class="btn small" href="https://github.com/eslamghanm/Multi-actors-E-commerce-system-" target="_blank" rel="noopener">
+            <a class="btn small inline-flex items-center gap-2 px-3 py-2 rounded-md font-semibold border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg-main)] transition" href="https://github.com/eslamghanm/Multi-actors-E-commerce-system-" target="_blank" rel="noopener">
               <i class="fab fa-github"></i> View Code
             </a>
-            <a class="btn small ghost" href="https://storm123.netlify.app/shared/components/dashboard/autogeneratedata" target="_blank" rel="noopener">
+            <a class="btn small ghost inline-flex items-center gap-2 px-3 py-2 rounded-md font-semibold border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg-main)] transition" href="https://storm123.netlify.app/" target="_blank" rel="noopener">
               <i class="fas fa-external-link-alt"></i> Live Demo
             </a>
           </div>
         </div>
       </article>
 
-      <!-- Project 2 - Genius Online Education -->
+      <!-- Project 3 - Ghanem Dental CMS (Angular) -->
       <article class="project-card reveal">
-        <img src="https://picsum.photos/seed/genius/600/400" alt="Genius Online Education preview" />
+        <img src="images/dental-cms.jpg" onerror="this.onerror=null;this.src='images/final me.jpg'" alt="Ghanem Dental CMS preview" loading="lazy" />
         <div class="project-body">
-          <h3>Genius Online Education</h3>
+          <h3>Ghanem Dental CMS</h3>
           <p>
-            Responsive online education platform featuring a modern UI, intuitive navigation, and structured layout 
-            designed for engaging learning experiences.
+            Modern Angular app for managing patients, treatments, and invoices for a dental clinic.
+            Fully client-side (LocalStorage) with fast, responsive UI.
           </p>
           <div class="project-links">
-            <a class="btn small" href="https://github.com/eslamghanm/Genius-online-education" target="_blank" rel="noopener">
+            <a class="btn small inline-flex items-center gap-2 px-3 py-2 rounded-md font-semibold border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg-main)] transition" href="https://github.com/eslamghanm/ghanem-CMS" target="_blank" rel="noopener noreferrer">
               <i class="fab fa-github"></i> View Code
             </a>
-            <a class="btn small ghost" href="https://github.com/eslamghanm/Genius-online-education" target="_blank" rel="noopener">
+            <a class="btn small ghost inline-flex items-center gap-2 px-3 py-2 rounded-md font-semibold border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg-main)] transition" href="https://gahnem-cms.netlify.app/dashboard" target="_blank" rel="noopener noreferrer">
               <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4 - Eventura (Event Management) -->
+      <article class="project-card reveal">
+        <img src="images/eventura.jpg" onerror="this.onerror=null;this.src='images/final me.jpg'" alt="Eventura Event Management preview" loading="lazy" />
+        <div class="project-body">
+          <h3>Eventura — Event Management</h3>
+          <p>
+            Angular-based event management UI with modular structure and SCSS styling.
+            Forked for learning and customization.
+          </p>
+          <div class="project-links">
+            <a class="btn small inline-flex items-center gap-2 px-3 py-2 rounded-md font-semibold border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg-main)] transition" href="https://github.com/eslamghanm/eventura-event-management-system" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i> View Code
+            </a>
+            <a class="btn small ghost inline-flex items-center gap-2 px-3 py-2 rounded-md font-semibold border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg-main)] transition" href="https://eventplannersystem.netlify.app/" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 5 - JobPosting (Laravel) -->
+      <article class="project-card reveal">
+        <img src="images/jop-posting.png" onerror="this.onerror=null;this.src='images/final me.jpg'" alt="Job Posting (Laravel) preview" loading="lazy" />
+        <div class="project-body">
+          <h3>JobPosting — Laravel</h3>
+          <p>
+            Proof-of-work Laravel project exploring job posting features, Blade views, and CRUD patterns.
+          </p>
+          <div class="project-links">
+            <a class="btn small inline-flex items-center gap-2 px-3 py-2 rounded-md font-semibold border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg-main)] transition" href="https://github.com/eslamghanm/JobPosting" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i> View Code
             </a>
           </div>
         </div>
@@ -179,7 +231,7 @@
     <!-- Contact Section                             -->
     <!-- ========================================= -->
  <section id="contact" class="section contact" aria-label="Contact">
-  <div class="container contact-grid">
+  <div class="container contact-grid max-w-[1100px] w-[92%] mx-auto grid md:grid-cols-2 gap-8 text-center md:text-left">
     <!-- Contact Info -->
     <div class="reveal">
       <h2>Contact</h2>
@@ -190,27 +242,25 @@
       </p>
 
       <div class="socials">
-        <a href="https://github.com/eslamghanm" aria-label="GitHub" class="social-link github" target="_blank" rel="noopener">
+        <a href="https://github.com/eslamghanm" aria-label="GitHub" class="social-link github" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-github"></i><span class="sr-only">GitHub</span>
         </a>
-        <a href="https://linkedin.com/in/eslam-ghanem-aa404b2a3" aria-label="LinkedIn" class="social-link linkedin" target="_blank" rel="noopener">
+        <a href="https://linkedin.com/in/eslam-ghanem-aa404b2a3" aria-label="LinkedIn" class="social-link linkedin" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-linkedin"></i><span class="sr-only">LinkedIn</span>
         </a>
-        <a href="https://wa.me/201280102968" aria-label="WhatsApp" class="social-link whatsapp" target="_blank" rel="noopener">
+        <a href="https://wa.me/201280102968" aria-label="WhatsApp" class="social-link whatsapp" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-whatsapp"></i><span class="sr-only">WhatsApp</span>
         </a>
-        <a href="https://www.facebook.com/share/17WVTrS9m4/" aria-label="Facebook" class="social-link facebook" target="_blank" rel="noopener">
+        <a href="https://www.facebook.com/share/17WVTrS9m4/" aria-label="Facebook" class="social-link facebook" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-facebook"></i><span class="sr-only">Facebook</span>
         </a>
-        <a href="https://www.tiktok.com/@loma.162001?_t=ZS-90InlFTBsUU&_r=1" aria-label="TikTok" class="social-link tiktok" target="_blank" rel="noopener">
-          <i class="fab fa-tiktok"></i><span class="sr-only">TikTok</span>
-        </a>
+        
        
       </div>
     </div>
 
     <!-- Contact Form -->
-    <form id="contactForm" class="reveal" action="mailto:youremail@example.com" method="POST" enctype="text/plain">
+    <form id="contactForm" class="reveal" action="#" method="post">
       <div class="form-field">
         <label for="name">Name</label>
         <input id="name" name="name" type="text" placeholder="Your name" required />
@@ -245,16 +295,17 @@
     <div class="container footer-grid">
       <p>© <span id="year"></span> Eslam Ghanem</p>
       <div class="footer-socials">
-     <a href="https://github.com/eslamghanm" aria-label="GitHub" class="social-link github" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/eslam-ghanem-aa404b2a3" aria-label="LinkedIn" class="social-link linkedin" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-            <a href="https://wa.me/201280102968" aria-label="WhatsApp" class="social-link whatsapp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.facebook.com/share/17WVTrS9m4/" aria-label="Facebook" class="social-link facebook" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
-            <a href=https://www.tiktok.com/@loma.162001?_t=ZS-90InlFTBsUU&_r=1" aria-label="TikTok" class="social-link tiktok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+     <a href="https://github.com/eslamghanm" aria-label="GitHub" class="social-link github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/eslam-ghanem-aa404b2a3" aria-label="LinkedIn" class="social-link linkedin" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/201280102968" aria-label="WhatsApp" class="social-link whatsapp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/share/17WVTrS9m4/" aria-label="Facebook" class="social-link facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+            
       </div>
     </div>
   </footer>
 
+  
   <!-- App JS -->
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
